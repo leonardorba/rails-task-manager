@@ -1,0 +1,6 @@
+<h1><%= @task.title %></h1>
+<p>Details: <%= @task.details %></p>
+<p>Status <%= @task.completed? ? '<i class="fa-regular fa-square-check"></i>'.html_safe : '<i class="fa-regular fa-square"></i>'.html_safe %></p>
+<%= link_to 'Back to your tasks', tasks_path, class:"btn btn-primary" %>
+<%= link_to 'Edit your task', edit_task_path(@task), class:"btn btn-primary" %>
+<%= link_to 'Delete this task', task_path(@task), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'}, class:"btn btn-primary" %>
